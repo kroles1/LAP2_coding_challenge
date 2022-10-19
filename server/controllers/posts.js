@@ -6,7 +6,7 @@ async function createNewPost(req, res) {
     console.log(req.body);
     const { title, name, body } = req.body;
     let newPost = await Post.create(title, name, body);
-    res.status(201).json(newPost);
+    res.status(201).send(newPost);
   } catch (err) {
     console.log(err);
     res.status(400).json({err})

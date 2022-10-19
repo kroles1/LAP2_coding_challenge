@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./app//index.js"></script>
     <title>Telegraph</title>
 </head>
+
 <body>
-    <div id="content">
-    <h1>Telegraph</h1>
-    <form id="new-post-form">
-        <label for="title">title</label>
-        <input type="text" id="title" />
+    <header>
+        <h1>Telegraph</h1>
+    </header>
+    <main>
+        <div id="form-container">
+            <form id="new-post-form">
+                <div>
+                    <label for="title">title</label>
+                    <input type="text" id="title" />
+                </div>
 
-        <label for="name">name</label>
-        <input type="text" id="name" />
+                <div>
+                    <label for="name">name</label>
+                    <input type="text" id="name" />
+                </div>
 
-        <label for="content">content</label>
-        <input type="text" id="content" />
+                <div>
+                    <label for="content">content</label>
+                    <input type="text" id="content" />
+                </div>
 
-        <input type="submit" value="Publish">
-    </form>
-    </div>
+                <div>
+                    <input type="submit" value="Publish">
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
 </body>
+
 </html>
