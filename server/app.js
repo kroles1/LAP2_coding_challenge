@@ -8,9 +8,9 @@ const telegraph = require("./routes/telegraph");
 app.use(cors());
 app.use(bodyParser.json());
 
-// default 
+// default
 app.get("/", (req, res) => {
-	res.send("Welcome to Telegraph");
+  res.send("Welcome to Telegraph");
 });
 
 // router
