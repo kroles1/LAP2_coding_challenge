@@ -1,10 +1,6 @@
 const formData = document.getElementById("new-post-form");
-const resultsContainer = document.getElementById("results");
-
 
 formData.addEventListener("submit", submitNewPost);
-
-
 
 async function submitNewPost(e) {
   e.preventDefault();
@@ -28,24 +24,5 @@ async function submitNewPost(e) {
     });
   console.log("out of fetch function");
   console.log(newPost);
-  appanedNewPost(newPost);
-//   redirectToSinglePage(newPost._id)
-location.href = `http://127.0.0.1:5500/client/singlePost.html?_id=${newPost._id}`
+  location.href = `http://127.0.0.1:5500/client/singlePost.html?_id=${newPost._id}`;
 }
-
-function appanedNewPost(postData) {
-    const { title, name, body } = postData;
-    const postHeader = document.createElement('h1')
-    postHeader.textContent = title
-    resultsContainer.appendChild(postHeader)
-  
-    const createdBy = document.createElement('h3')
-    createdBy.textContent = name
-    resultsContainer.appendChild(createdBy)
-  
-    const postBody = document.createElement('p')
-    postBody.textContent = body
-    resultsContainer.appendChild(postBody)
-
-    
-  }
