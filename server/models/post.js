@@ -34,10 +34,11 @@ class Post {
         let postData = await db
           .collection("posts")
           .insertOne({ title, name, body });
-          console.log(postData);
+          console.log("*****Inserted new post to db*****\n",postData);
         let newPost = new Post(postData.ops[0]);
         resolve(newPost);
       } catch (err) {
+        console.log(err);
         reject("Error creating post");
       }
     });
