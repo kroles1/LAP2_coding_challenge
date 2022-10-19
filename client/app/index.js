@@ -1,28 +1,45 @@
+const formData = document.getElementById("new-post-form");
+const resultsContainer = document.getElementById("results");
 
-const formData = document.getElementById('new-post-form')
 
-formData.addEventListener('submit', submitNewPost)
+formData.addEventListener("submit", submitNewPost);
 
 async function submitNewPost(e) {
-    e.preventDefault();
-    let postData = {
-        title: e.target.title.value,
-        name: e.target.name.value,
-        content: e.target.content.value,
-    }
-    console.log(postData);
-    const newPost = await fetch('http://localhost:3000/telegraph', {
-        method: 'POST',
-        body: JSON.stringify(postData)
-    }).then(res => {
-        console.log(res);
-        return res.json()
-    }).then(data => {
-        console.log(data);
-        return data
-    }).catch(err => {
-        console.log(err);
-    })
-    console.log("out of fetch function");
-    console.log(newPost.title);
+  e.preventDefault();
+  let postData = {
+    title: e.target.title.value,
+    name: e.target.name.value,
+    body: e.target.content.value,
+  };
+  console.log(postData);
+  const newPost = await fetch("http://localhost:3000/telegraph", {
+    method: "POST",
+    body: JSON.stringify(postData),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => data)
+    .catch((err) => {
+      console.log(err);
+    });
+  console.log("out of fetch function");
+  console.log(newPost);
+  appanedNewPost(newPost)
 }
+
+function appanedNewPost(postData) {
+    const { title, name, body } = postData;
+    const postHeader = document.createElement('h1')
+    postHeader.textContent = title
+    resultsContainer.appendChild(postHeader)
+  
+    const createdBy = document.createElement('h3')
+    createdBy.textContent = name
+    resultsContainer.appendChild(createdBy)
+  
+    const postBody = document.createElement('p')
+    postBody.textContent = body
+    resultsContainer.appendChild(postBody)
+  }
