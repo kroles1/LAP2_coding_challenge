@@ -3,6 +3,7 @@ const { ObjectId } = require("mongodb");
 
 class Post {
   constructor(data) {
+    this._id = data._id
     this.title = data.title;
     this.name = data.name;
     this.body = data.body;
@@ -30,12 +31,15 @@ class Post {
     return new Promise(async (resolve, reject) => {
       try {
         console.log("**************\n create function in modles");
+        let postData = { title, name, body }
         const db = await init();
-        let postData = await db
+        postData._id = (await db
           .collection("posts")
-          .insertOne({ title, name, body });
+          .insertOne(postData)).insertedId;
           console.log("*****Inserted new post to db*****\n",postData);
-        let newPost = new Post(postData.ops[0]);
+          console.log(postData._id, typeof postData._id);
+          // const post = await db.collection('posts).find
+        let newPost = new Post(postData);
         resolve(newPost);
       } catch (err) {
         console.log(err);

@@ -5,7 +5,7 @@ async function createNewPost(req, res) {
   try {
     console.log(req.body);
     const { title, name, body } = req.body;
-    const newPost = await Post.create(title, name, body);
+    let newPost = await Post.create(title, name, body);
     res.status(201).json(newPost);
   } catch (err) {
     console.log(err);
