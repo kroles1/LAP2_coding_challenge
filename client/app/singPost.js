@@ -1,17 +1,47 @@
-// grap the id from html link
-// fetch a post by id from api
-// dispalying as aresults
-// console.log(location.href);
-// var dloc= window.location.href;
-// var dsplt= dloc.split("?");
-// console.log(dsplt);
-// var sanitize= dsplt[1].split("=");
-// console.log(sanitize[1]);
-
 // grap the window link wich contain query
 const link = window.location.href;
 // split the link on query sign ?
-const [header, query] = link.split("?")
+const [header, query] = link.split("?");
 console.log(query);
-const postId = query.split("=")[1]
+const postId = query.split("=")[1];
 console.log(postId);
+
+const resultsContainer = document.getElementById("results");
+
+async function fetchPostData() {
+  try {
+    const rawData = await fetch(`http://localhost:3000/telegraph/${postId}`);
+    console.log(rawData);
+    const postData = await rawData.json();
+    console.log(postData);
+    appanedNewPost(postData);
+  } catch (err) {
+    console.log(err);
+  }
+}
+fetchPostData();
+function appanedNewPost(postData) {
+  const { title, name, body } = postData;
+  document.querySelector("title").textContent = title;
+
+  const headerContainer = document.createElement("div");
+  const postHeader = document.createElement("h1");
+  postHeader.textContent = title;
+  headerContainer.appendChild(postHeader);
+  resultsContainer.appendChild(headerContainer);
+
+  const createdByContainer = document.createElement("div");
+  const createdBy = document.createElement("h3");
+  createdBy.textContent = name;
+  const text = document.createElement('p');
+  text.textContent = 'Published by';
+  createdByContainer.appendChild(text)
+  createdByContainer.appendChild(createdBy);
+  resultsContainer.appendChild(createdByContainer);
+
+  const contentContainer = document.createElement("div");
+  const postBody = document.createElement("p");
+  postBody.textContent = body;
+  contentContainer.appendChild(postBody);
+  resultsContainer.appendChild(contentContainer);
+}
