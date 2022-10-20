@@ -5,7 +5,7 @@ async function getAllPosts(req, res) {
   const port = req.headers.host.slice(-4);
   console.log(port);
   try {
-    let posts = await Post.all(port)
+    let posts = await Post.all()
     console.log("from controllers:\n All posts: \n", posts);
     res.status(200).json(posts);
   } catch (err) {
