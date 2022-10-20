@@ -15,10 +15,10 @@ class Post {
         console.log("*********\n getting all posts models");
         const db = await init()
         let postsData
-        if(port == '3000'){
-          postsData = await db.collection("posts").find().toArray()
-        } else {
+        if(port == '5000'){
           postsData = await db.collection("test").find().toArray()
+        } else {
+          postsData = await db.collection("post").find().toArray()
         }
         
         console.log(postsData);
