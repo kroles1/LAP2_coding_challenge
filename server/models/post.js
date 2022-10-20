@@ -9,6 +9,31 @@ class Post {
     this.body = data.body;
   }
 
+  static all(port) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        console.log("*********\n getting all posts models");
+        const db = await init()
+        let postsData
+        if(port == '3000'){
+          postsData = await db.collection("posts").find().toArray()
+        } else {
+          postsData = await db.collection("test").find().toArray()
+        }
+        
+        console.log(postsData);
+        // let books = bookData.rows.map((b) => new Book(b));
+        // resolve(books);
+        let posts = postsData.map(post => new Post({...post, id:post._id}))
+        console.log("******trying to map the new array\n", posts);
+        resolve(posts)
+      } catch (err) {
+        console.log(err);
+        reject("empty list");
+      }
+    });
+  }
+  
   static findById(id) {
     return new Promise(async (resolve, reject) => {
       try {
@@ -47,6 +72,27 @@ class Post {
       }
     });
   }
+
+  // static insertMoreThanPost(array) {
+  //   return new Promise(async (resolve, reject) => {
+  //     try {
+  //       console.log("**************\n create function in modles");
+  //       // let postData = { title, name, body }
+  //       const db = await init();
+  //       const insertedData = await db
+  //         .collection("test")
+  //         .insertMany(array)
+  //         console.log("*****Inserted new post to db*****\n",insertedData);
+  //         console.log("looking for results",insertedData.insertedIds);
+  //         // const post = await db.collection('posts).find
+  //       let newPost = new Post(postData);
+  //       resolve(newPost);
+  //     } catch (err) {
+  //       console.log(err);
+  //       reject("Error creating post");
+  //     }
+  //   });
+  // }
 }
 
 module.exports = Post;
