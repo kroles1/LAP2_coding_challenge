@@ -5,6 +5,7 @@ body {
     align-items: center;
     justify-content: space-around;
     background-color: rgb(247, 254, 254);
+    margin: 20px;
 }
 header {
     font-family: 'Bodoni Moda', serif;
@@ -26,7 +27,7 @@ main {
 #new-post-form > div {
     padding: 10px;
     background-color:rgba(233, 252, 252, 0.7);
-    box-shadow: 20px 20px 50px 10px rgba(91, 106, 106, 0.4);
+    box-shadow: 20px 20px 50px 10px rgba(69, 83, 83, 0.4);
     border-radius: 10%;
 }
 #title, #name {
@@ -65,24 +66,50 @@ input, textarea {
 
 #title:hover {
     background-color: rgb(214, 244, 244);
+    -webkit-animation:bump 0.35s  linear; /*for Google*/
+    -moz-animation:bump 0.35s  linear;/*for Firefox*/
 }
 
 #name:hover {
     background-color: rgb(214, 244, 244);
+    -webkit-animation:bump 0.35s  linear; /*for Google*/
+    -moz-animation:bump 0.35s  linear;/*for Firefox*/
 }
 
 #content:hover {
     background-color: rgb(214, 244, 244);
+    -webkit-animation:bump 0.35s  linear; /*for Google*/
+    -moz-animation:bump 0.35s  linear;/*for Firefox*/
 }
 
 #submit:hover {
     background-color: rgb(214, 244, 244);
     cursor: pointer;
+    -webkit-animation:bump 0.35s  linear; /*for Google*/
+    -moz-animation:bump 0.35s  linear;/*for Firefox*/
 }
 
 #new-post-form > div:hover {
     background-color: rgb(214, 244, 244); 
+    -webkit-animation:bump 0.35s  linear; /*for Google*/
+    -moz-animation:bump 0.35s  linear;/*for Firefox*/
 }
+
+@-webkit-keyframes bump{/*for Google*/
+	0% {-webkit-transform:scale(1.2,1.2); opacity: 0.7;}
+	50% {-webkit-transform:scale(0.9,0.9); opacity: 0.9;}
+	100% {-webkit-transform:scale(1,1); opacity: 1;}
+}
+
+@-moz-keyframes bump{/*for Firefox*/
+	0% {-moz-transform:scale(1.2,1.2); opacity: 0.7;}
+	50% {-moz-transform:scale(0.9,0.9); opacity: 0.9;}
+	100% {-moz-transform:scale(1,1); opacity: 1;}
+}
+
+
+
+
 
 /* single post page*/
 #results {
@@ -104,4 +131,6 @@ input, textarea {
 .created-by-name, .created-by-text {
     margin: 5px;
 }
+
+
 
