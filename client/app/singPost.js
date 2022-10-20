@@ -31,9 +31,12 @@ function appanedNewPost(postData) {
   resultsContainer.appendChild(headerContainer);
 
   const createdByContainer = document.createElement("div");
+  createdByContainer.classList.add("created-by");
   const createdBy = document.createElement("h3");
+  createdBy.classList.add("created-by-name");
   createdBy.textContent = name;
   const text = document.createElement('p');
+  text.classList.add("created-by-text");
   text.textContent = 'Published by';
   createdByContainer.appendChild(text)
   createdByContainer.appendChild(createdBy);
