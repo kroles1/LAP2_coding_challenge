@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./favicon_io/android-chrome-512x512.png" type="image/x-icon">
-    <!-- css & fonts -->
+    <!-- css, fonts & favicon -->
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon_io/android-chrome-192x192.png" type="image/x-icon">
     <!-- javascript -->
     <script defer src="./app/singPost.js"></script>
     <title>Your telegraph</title>
@@ -18,12 +19,15 @@
 
 <body>
     <header>
-        <h1>Telegraph</h1>
+        <a id="header-single-page" href="./index.html">Telegraph</a>
+        <button id="dark-mode-btn" onclick="darkMode()">Dark mode</button>
     </header>
     <main>
         <div id="results"></div>
     </main>
-    <footer></footer>
+    <footer>
+        <p>Website created by Taher & Kornelia</p>
+    </footer>
 </body>
 
 </html>

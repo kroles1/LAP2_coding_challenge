@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./favicon_io/android-chrome-512x512.png" type="image/x-icon">
-    <!-- css & fonts-->
+    <!-- css, fonts, favicon-->
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon_io/android-chrome-192x192.png" type="image/x-icon">
     <!-- javascript -->
     <script defer src="./app//index.js"></script>
     <title>Telegraph</title>
 </head>
 
 <body>
-    <header>
-        <h1>Telegraph</h1>
+    <header id="header-index">
+        <h1 id="header" >Telegraph</h1>
+        <button id="dark-mode-btn" onclick="darkMode()">Dark mode</button>
     </header>
     <main>
         <div id="form-container">
@@ -36,7 +37,7 @@
                 <div>
                     <!-- <label for="content">content</label> -->
                     <!-- <input type="text" id="content" /> -->
-                    <textarea placeholder="content" name="content" id="content" cols="30" rows="10"></textarea>
+                    <textarea  placeholder="content" name="content" id="content" cols="30" rows="10"></textarea>
                 </div>
 
                 <div id="xkout">
@@ -45,7 +46,9 @@
             </form>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <p>Website created by Taher & Kornelia</p>
+    </footer>
 </body>
 
 </html>

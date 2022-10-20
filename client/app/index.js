@@ -26,3 +26,12 @@ async function submitNewPost(e) {
   console.log(newPost);
   location.href = `http://127.0.0.1:5500/client/singlePost.html?_id=${newPost._id}`;
 }
+
+
+function darkMode() {
+  const body = document.body;
+  body.classList.toggle("dark-mode");
+  const btn = document.getElementById("submit");
+  btn.classList.toggle("dark-mode")
+
+}

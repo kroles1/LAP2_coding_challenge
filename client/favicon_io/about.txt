@@ -1,6 +1,6 @@
 This favicon was generated using the following font:
 
-- Font Title: Noto Sans Devanagari
-- Font Author: Copyright 2022 The Noto Project Authors (https://github.com/notofonts/devanagari)
-- Font Source: http://fonts.gstatic.com/s/notosansdevanagari/v19/TuGoUUFzXI5FBtUq5a8bjKYTZjtRU6Sgv3NaV_SNmI0b8QQCQmHn6B2OHjbL_08AlXQly-AzoFoW4Ow.ttf
+- Font Title: Bodoni Moda
+- Font Author: Copyright 2020 The Bodoni Moda Project Authors (https://github.com/indestructible-type)
+- Font Source: http://fonts.gstatic.com/s/bodonimoda/v19/aFT67PxzY382XsXX63LUYL6GYFcan6NJrKp-VPjfJMShrpsGFUt8oU7awIBytVjMYwE.ttf
 - Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

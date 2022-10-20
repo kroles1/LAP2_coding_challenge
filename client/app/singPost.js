@@ -48,3 +48,11 @@ function appanedNewPost(postData) {
   contentContainer.appendChild(postBody);
   resultsContainer.appendChild(contentContainer);
 }
+
+
+function darkMode() {
+  const body = document.body;
+  body.classList.toggle("dark-mode");
+  const headerPage = document.getElementById("header-single-page")
+  headerPage.classList.toggle("dark-mode")
+}
