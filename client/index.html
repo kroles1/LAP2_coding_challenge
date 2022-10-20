@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./favicon_io/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/style.css">
     <script defer src="./app//index.js"></script>
     <title>Telegraph</title>
 </head>
@@ -18,22 +19,23 @@
         <div id="form-container">
             <form id="new-post-form">
                 <div>
-                    <label for="title">title</label>
-                    <input type="text" id="title" />
+                    <!-- <label for="title">title</label> -->
+                    <input placeholder="title" type="text" id="title" />
                 </div>
 
                 <div>
-                    <label for="name">name</label>
-                    <input type="text" id="name" />
+                    <!-- <label for="name">name</label> -->
+                    <input placeholder="name" type="text" id="name" />
                 </div>
 
                 <div>
-                    <label for="content">content</label>
-                    <input type="text" id="content" />
+                    <!-- <label for="content">content</label> -->
+                    <!-- <input type="text" id="content" /> -->
+                    <textarea placeholder="content" name="content" id="content" cols="30" rows="10"></textarea>
                 </div>
 
-                <div>
-                    <input type="submit" value="Publish">
+                <div id="xkout">
+                    <input id="submit" type="submit" value="Publish">
                 </div>
             </form>
         </div>
