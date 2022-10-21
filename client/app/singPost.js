@@ -24,6 +24,11 @@ function appanedNewPost(postData) {
   const { title, name, body } = postData;
   document.querySelector("title").textContent = title;
 
+  const linkToPost = document.createElement('a')
+  linkToPost.setAttribute('href', link)
+  linkToPost.textContent = 'Save your link to be used in future '
+  resultsContainer.appendChild(linkToPost)
+
   const headerContainer = document.createElement("div");
   const postHeader = document.createElement("h1");
   postHeader.textContent = title;
