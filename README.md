@@ -2,7 +2,7 @@
 - Submit the title, name and content on our index page and our API will redirect you to the site of your telegraph. 
 - The link is reusable 
 - There is also a dark mode option.
-## Insallation & Usage
+## Installation & Usage
 - clone or fork the repo 
 ### Starting the server
 - cd into the server folder and run `npm install`
@@ -16,5 +16,5 @@
 - Express
 - MongoDB 
 ## Future features
-Authorisation & Authentification 
-Full CRUD (updating and deleting posts)
+- Authorisation & Authentification 
+- Full CRUD (updating and deleting posts)
